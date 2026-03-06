@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roblox Balance Message</title>
+
+  <!-- Google Font: Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050816;
+      --card-bg: #0f172a;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+    }
+
+    .card {
+      width: min(640px, 92vw);
+      background: linear-gradient(145deg, #020617, #020617 40%, #020617 60%, #020617);
+      border-radius: 18px;
+      padding: 24px 26px 22px;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(148, 163, 184, 0.12);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+    }
+
+    .title {
+      font-weight: 900;
+      font-size: clamp(26px, 3vw, 32px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #f9fafb;
+    }
+
+    .title span {
+      background: linear-gradient(120deg, #38bdf8, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .sender {
+      margin-top: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sender-tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+    }
+
+    .glow-ring {
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .glow-ring::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      border-image: linear-gradient(120deg, rgba(56, 189, 248, 0.9), rgba(168, 85, 247, 0.9)) 1;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 18px 16px 16px;
+      }
+      .message {
+        font-size: 14px;
+      }
+      .sender {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-ring"></div>
+    <div class="card-inner">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span>Roblox Balance Message</span>
+      </div>
+
+      <div class="title">
+        <span>Bold Title</span>
+      </div>
+
+      <div class="message">
+        This is your message text. You can replace this with whatever content you want to show here.
+      </div>
+
+      <div class="sender">
+        <span class="sender-tag">Sender</span>
+        <span>@CoolUsername</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
