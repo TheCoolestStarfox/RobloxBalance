@@ -1,0 +1,24 @@
+name: Update Balance
+
+on:
+  repository_dispatch:
+    types: [update_balance]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update balances.json
+        run: |
+          echo '${{ github.event.client_payload.json }}' > balances.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "BalanceBot"
+          git config user.email "bot@example.com"
+          git add balances.json
+          git commit -m "Update balances"
+          git push
